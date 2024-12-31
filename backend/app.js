@@ -41,8 +41,6 @@ app.use(
 );
 
 //Add your routers
-
-app.use("https://hospital-management-webapp.netlify.app/about", messageRouter);
 app.use("https://hospital-management-webapp.netlify.app/register", userRouter);
 app.use("https://hospital-management-webapp.netlify.app/login", userRouter);
 app.use("https://hospital-management-webapp.netlify.app/appointment", appointmentRouter);
