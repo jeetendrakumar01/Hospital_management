@@ -27,7 +27,7 @@ app.use(
 );
 
 //Explicitly handle preflight requests
-app.options("https://hospital-management-webapp.netlify.app/register", cors());
+app.options("*", cors());
 
 app.use(cookieParser());
 app.use(express.json());
@@ -42,9 +42,10 @@ app.use(
 
 //Add your routers
 
-app.use("/api/v1/message", messageRouter);
-app.use("/api/v1/user", userRouter);
-app.use("/api/v1/appointment", appointmentRouter);
+app.use("https://hospital-management-webapp.netlify.app/about", messageRouter);
+app.use("https://hospital-management-webapp.netlify.app/register", userRouter);
+app.use("https://hospital-management-webapp.netlify.app/login", userRouter);
+app.use("https://hospital-management-webapp.netlify.app/appointment", appointmentRouter);
 
 //Connect to the database
 dbConnection();
