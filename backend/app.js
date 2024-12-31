@@ -17,7 +17,7 @@ config({ path: "./config/config.env" });
 app.use(
   cors({
 
-    origin: ["https://hospital-management-webapp.netlify.app/"],
+    origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL],
 
     methods: ["GET", "POST", "DELETE", "PUT", "OPTIONS"],
     credentials: true,
@@ -27,7 +27,7 @@ app.use(
 );
 
 //Explicitly handle preflight requests
-app.options("*", cors());
+app.options("https://hospital-management-webapp.netlify.app/register", cors());
 
 app.use(cookieParser());
 app.use(express.json());
