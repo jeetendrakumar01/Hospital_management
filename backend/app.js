@@ -41,9 +41,9 @@ app.use(
 );
 
 //Add your routers
-app.use("https://hospital-management-webapp.netlify.app/register", userRouter);
-app.use("https://hospital-management-webapp.netlify.app/login", userRouter);
-app.use("https://hospital-management-webapp.netlify.app/appointment", appointmentRouter);
+app.use("/api/v1/message", messageRouter);
+app.use("/api/v1/user", userRouter);
+app.use("/api/v1/appointment", appointmentRouter);
 
 //Connect to the database
 dbConnection();
